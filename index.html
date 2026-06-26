@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="cy">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Croeso i Safle Ailgylchu</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #e6e6e6;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 520px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* HEADER */
+.header {
+  background-color: #0b4f3a;
+  color: white;
+  padding: 25px;
+}
+
+.header img {
+  height: 75px;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* CONTENT */
+.content {
+  padding: 25px;
+}
+
+/* ✅ ALL BUTTONS IDENTICAL BASE */
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+
+  border: 2px solid black;
+  cursor: pointer;
+  color: white;
+}
+
+/* MAIN BUTTON COLOUR */
+.main-btn {
+  background-color: #4a3ea8;
+}
+
+/* DROPDOWN BUTTON COLOUR */
+.sub-btn {
+  background-color: #5f54cc;
+}
+
+/* ACTIVE (Daily Check open) */
+.active {
+  background-color: #342f8a !important;
+}
+
+/* RIPPLE EFFECT */
+.btn::after {
+  content: "";
+  position: absolute;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  transform: scale(0);
+  width: 120px;
+  height: 120px;
+  opacity: 0;
+}
+
+.btn:active::after {
+  transform: scale(3);
+  opacity: 1;
+  transition: transform 0.4s, opacity 0.8s;
+}
+
+/* DROPDOWN CONTAINER */
+.sub-group {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  margin-top: -10px;
+  margin-bottom: 18px;
+}
+
+.sub-group.show {
+  max-height: 400px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img src="https://www.gwynedd.llyw.cymru/SiteElements/Images/LogoCwcis.png">
+    <h1>Croeso i Safle Ailgylchu</h1>
+  </div>
+
+  <div class="content">
+
+    <!-- 1. START -->
+    <a href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105" class="btn main-btn">
+      Start of the day
+    </a>
+
+    <!-- 2. DAILY CHECK -->
+    <button id="dailyBtn" class="btn main-btn" onclick="toggleDaily()">
+      Daily Check
+    </button>
+
+    <!-- DROPDOWN -->
+    <div id="dailyButtons" class="sub-group">
+      <a href="telehandler.html" class="btn sub-btn">Telehandler</a>
+      <a href="skips.html" class="btn sub-btn">Skips</a>
+      <a href="oilstore.html" class="btn sub-btn">Oil Store</a>
+    </div>
+
+    <!-- 3. PAINT -->
+    <a href="https://chekd.software/app/form/submit/dewuh69cb9590e02df165315115" class="btn main-btn">
+      Paint
+    </a>
+
+    <!-- 4. END -->
+    <a href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" class="btn main-btn">
+      End of the day
+    </a>
+
+  </div>
+
+</div>
+
+<script>
+function toggleDaily() {
+  const section = document.getElementById("dailyButtons");
+  const btn = document.getElementById("dailyBtn");
+
+  if (section.classList.contains("show")) {
+    section.classList.remove("show");
+    btn.classList.remove("active");
+  } else {
+    section.classList.add("show");
+    btn.classList.add("active");
+  }
+}
+</script>
+
+</body>
+</html>
