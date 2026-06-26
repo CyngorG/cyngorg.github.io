@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="EN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +30,16 @@ body {
   padding: 25px;
 }
 
+.header img {
+  height: 75px;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
 .news-box {
   background-color: #fff3cd;
   border: 2px solid #ffc107;
@@ -39,16 +49,6 @@ body {
   margin-bottom: 20px;
   font-weight: bold;
   text-align: center;
-}
-
-.header img {
-  height: 75px;
-  margin-bottom: 15px;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 28px;
 }
 
 .content {
@@ -110,19 +110,17 @@ body {
 
   <div class="content">
 
-  <!-- NEWS BOX -->
-  <div class="news-box">
-    ⚠️ Bad weather today – high winds expected. Take care on site.
-  </div>
-
-  <!-- YOUR BUTTONS START HERE -->
-  <a href="..." class="btn main-btn
+    <!-- NEWS BOX -->
+    <div class="news-box">
+      ⚠️ Bad weather today – high winds expected. Take care on site.
+    </div>
 
     <!-- 1. START -->
     <a href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105" class="btn main-btn">
       Start of the day
     </a>
 
+    <!-- 2. DAILY CHECK -->
     <button id="dailyBtn" class="btn main-btn" onclick="toggleDaily()">
       Daily Check
     </button>
@@ -133,10 +131,12 @@ body {
       <a href="oilstore.html" class="btn sub-btn">Oil Store</a>
     </div>
 
+    <!-- 3. PAINT -->
     <a href="https://chekd.software/app/form/submit/dewuh69cb9590e02df165315115" class="btn main-btn">
       Paint
     </a>
 
+    <!-- 4. END -->
     <a href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" class="btn main-btn">
       End of the day
     </a>
