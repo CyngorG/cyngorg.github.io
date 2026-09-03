@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hooklift DL24 AUE</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #e6e6e6;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 660px;
+  width: 95%;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.header {
+  background-color: #0b4f3a;
+  color: white;
+  padding: 25px;
+}
+
+.header img {
+  height: 75px;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.news-box {
+  background-color: #fff3cd;
+  border: 2px solid #ffc107;
+  color: #333;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.content {
+  padding: 25px;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid black;
+  cursor: pointer;
+  color: white;
+}
+
+.main-btn {
+  background-color: #4a3ea8;
+}
+
+.sub-btn {
+  background-color: #a79df0;
+}
+
+.active {
+  background-color: #342f8a !important;
+}
+
+.sub-group {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  margin-top: -10px;
+  margin-bottom: 18px;
+}
+
+.sub-group.show {
+  max-height: 400px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <img src="https://www.gwynedd.llyw.cymru/SiteElements/Images/LogoCwcis.png">
+    <h1>Croeso i Safle Ailgylchu</h1>
+  </div>
+
+  <div class="content">
+
+    <!-- NEWS BOX -->
+    <div class="news-box">
+      ⚠️ Bad weather today – high winds expected. Take care on site.
+    </div>
+
+    <!-- 1. START -->
+    <a href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105" class="btn main-btn">
+      Start of the day
+    </a>
+
+    <!-- 2. DAILY CHECK -->
+    <button id="dailyBtn" class="btn main-btn" onclick="toggleDaily()">
+      Daily Check
+    </button>
+
+    <div id="dailyButtons" class="sub-group">
+      <a href="telehandler.html" class="btn sub-btn">Telehandler</a>
+      <a href="skips.html" class="btn sub-btn">Skips</a>
+      <a href="oilstore.html" class="btn sub-btn">Oil Store</a>
+    </div>
+
+    <!-- 3. PAINT -->
+    <a href="https://chekd.software/app/form/submit/dewuh69cb9590e02df165315115" class="btn main-btn">
+      Paint
+    </a>
+
+    <!-- 4. END -->
+    <a href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" class="btn main-btn">
+      End of the day
+    </a>
+
+  </div>
+
+</div>
+
+<script>
+function toggleDaily() {
+  const section = document.getElementById("dailyButtons");
+  const btn = document.getElementById("dailyBtn");
+
+  if (section.classList.contains("show")) {
+    section.classList.remove("show");
+    btn.classList.remove("active");
+  } else {
+    section.classList.add("show");
+    btn.classList.add("active");
+  }
+}
+</script>
+
+</body>
+</html>
