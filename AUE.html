@@ -1,186 +1,176 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- HEADER -->
 
-<title>Hooklift DEMO</title>
+<header class="header">
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #e6e6e6;
-  display: flex;
-  justify-content: center;
-}
+    <img
+       &nbsp;src="https://www.gwynedd.llyw.cymru/SiteElements/Images/LogoCwcis.png"
+ &nbsp; &nbsp; &nbsp; &nbsp;alt="Company logo"
+ &nbsp; &nbsp;>
 
-.container {
-  max-width: 660px;
-  width: 95%;
-  background: #ffffff;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
+ &nbsp; &nbsp;<div class="header-text">
 
-.header {
-  background-color: #0b4f3a;
-  color: white;
-  padding: 25px;
-}
+ &nbsp; &nbsp; &nbsp; &nbsp;<h1>HOOKLIFT AUE</h1>
 
-.header img {
-  height: 75px;
-  margin-bottom: 15px;
-}
+ &nbsp; &nbsp; &nbsp; &nbsp;<p>Vehicle Portal</p>
 
-.header h1 {
-  margin: 0;
-  font-size: 28px;
-}
+ &nbsp; &nbsp;</div>
 
-.news-box {
-  background-color: #fff3cd;
-  border: 2px solid #ffc107;
-  color: #333;
-  padding: 15px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  text-align: center;
-}
+</header>
 
-.content {
-  padding: 25px;
-}
 
-.btn {
-  position: relative;
-  overflow: hidden;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 18px;
-  border-radius: 18px;
-  margin-bottom: 18px;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  border: 2px solid black;
-  cursor: pointer;
-  color: white;
-}
+<!-- MAIN CONTENT -->
 
-.main-btn {
-  background-color: #4a3ea8;
-}
+<main class="content">
 
-.sub-btn {
-  background-color: #a79df0;
-}
 
-.active {
-  background-color: #342f8a !important;
-}
+ &nbsp; &nbsp;<!-- MOT -->
 
-.sub-group {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
-  margin-top: -10px;
-  margin-bottom: 18px;
-}
+ &nbsp; &nbsp;<div class="news-box">
 
-.sub-group.show {
-  max-height: 400px;
-}
-</style>
-</head>
+        <div class="news-icon">
+            ⚠️
+        </div>
 
-<body>
+        <div class="news-text">
 
-<div class="container">
+            <div class="news-title">
+                MOT
+            </div>
 
-  <div class="header">
-    <img src="https://www.gwynedd.llyw.cymru/SiteElements/Images/LogoCwcis.png">
-    <h1>Croeso Hooklift DEMO</h1>
-  </div>
+            <div class="news-date">
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Due 17 October 2026
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
 
-  <div class="content">
+ &nbsp; &nbsp; &nbsp; &nbsp;</div>
 
-    <!-- NEWS BOX -->
-    <div class="news-box">
-      ⚠️ MOT Due 17/10/2026
-    </div>
+ &nbsp; &nbsp;</div>
 
-    <!-- 1. DOC -->
-    <a href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105" class="btn main-btn">
-      Duty of Care
+
+ &nbsp; &nbsp;<!-- DUTY OF CARE -->
+
+ &nbsp; &nbsp;<a
+ &nbsp; &nbsp; &nbsp; &nbsp;href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105"
+ &nbsp; &nbsp; &nbsp; &nbsp;class="btn duty-btn"
+ &nbsp; &nbsp;>
+
+ &nbsp; &nbsp; &nbsp;  <span class="duty-icon">📄</span>
+
+        <span class="duty-title">
+            Duty of Care
+        </span>
+
+        <span class="duty-subtitle">
+            Tap to open
+        </span>
+
     </a>
 
-    <!-- 2. TRANSFER SITES -->
-    <button id="transferBtn" class="btn main-btn" onclick="toggleTransferSites()">
-      Transfer Sites
-    </button>
 
-    <div id="transferButtons" class="sub-group">
-      <a href="telehandler.html" class="btn sub-btn">Telehandler</a>
-      <a href="skips.html" class="btn sub-btn">Skips</a>
-      <a href="oilstore.html" class="btn sub-btn">Oil Store</a>
+    <!-- MAIN SECONDARY ACTIONS -->
+
+    <div class="main-actions">
+
+
+        <!-- TRANSFER SITES -->
+
+        <a
+            href="transfer-sites.html"
+            class="btn main-btn secondary-btn"
+        >
+
+            <span class="button-icon">🗺️</span>
+
+            <span>
+                HWRC Transfer Sites
+            </span>
+
+        </a>
+
+
+        <!-- DAILY CHECK -->
+
+        <a
+            href="dailycheck.html"
+            class="btn main-btn secondary-btn"
+        >
+
+            <span class="button-icon">✓</span>
+
+            <span>
+                Daily Check
+            </span>
+
+        </a>
+
+
     </div>
 
-    <!-- 3. DAILY CHECK -->
-    <a href="dailycheck.html" class="btn main-btn">
-      Daily Check
-    </a>
 
-    <!-- 4. MORE OPTIONS -->
-    <button id="optionsBtn" class="btn main-btn" onclick="toggleOptions()">
-      More Options
+    <!-- MORE OPTIONS -->
+
+    <button
+        id="optionsBtn"
+        class="btn options-btn"
+        onclick="toggleOptions()"
+        aria-expanded="false"
+    >
+
+        <span id="optionsIcon">☰</span>
+
+        <span id="optionsText">
+            More Options
+        </span>
+
     </button>
 
-    <div id="optionButtons" class="sub-group">
-      <a href="https://chekd.software/app/form/submit/dewuh69cb9590e02df165315115" class="btn sub-btn">
-        Request Holiday
-      </a>
-      <a href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" class="btn sub-btn">
-        Report a Problem
-      </a>
+
+    <!-- HIDDEN OPTIONS -->
+
+    <div
+        id="optionButtons"
+       &nbsp;class="sub-group"
+ &nbsp; &nbsp;>
+
+
+ &nbsp; &nbsp; &nbsp; &nbsp;<!-- HOLIDAY -->
+
+ &nbsp; &nbsp; &nbsp; &nbsp;<a
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;href="https://chekd.software/app/form/submit/dewuh69cb9590e02df165315115"
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class="btn sub-btn"
+ &nbsp; &nbsp; &nbsp; &nbsp;>
+
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="button-icon">🏖️</span>
+
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Request Holiday
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+
+ &nbsp; &nbsp; &nbsp; &nbsp;</a>
+
+
+ &nbsp; &nbsp; &nbsp; &nbsp;<!-- PROBLEM -->
+
+ &nbsp; &nbsp; &nbsp; &nbsp;<a
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337"
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class="btn sub-btn"
+ &nbsp; &nbsp; &nbsp; &nbsp;>
+
+            <span class="button-icon">⚠️</span>
+
+            <span>
+                Report a Problem
+            </span>
+
+        </a>
+
+
     </div>
 
-  </div>
 
+</main>
+
+
+<div class="footer">
+    Hooklift Vehicle Portal
 </div>
 
-<script>
-function toggleTransferSites() {
-  const section = document.getElementById("transferButtons");
-  const btn = document.getElementById("transferBtn");
-
-  if (section.classList.contains("show")) {
-    section.classList.remove("show");
-    btn.classList.remove("active");
-  } else {
-    section.classList.add("show");
-    btn.classList.add("active");
-  }
-}
-
-function toggleOptions() {
-  const section = document.getElementById("optionButtons");
-  const btn = document.getElementById("optionsBtn");
-
-  if (section.classList.contains("show")) {
-    section.classList.remove("show");
-    btn.classList.remove("active");
-  } else {
-    section.classList.add("show");
-    btn.classList.add("active");
-  }
-}
-</script>
-
-</body>
-</html>
