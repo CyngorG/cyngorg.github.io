@@ -120,35 +120,57 @@ body {
       Duty of Care
     </a>
 
-    <!-- 2. DAILY CHECK -->
-    <button id="dailyBtn" class="btn main-btn" onclick="toggleDaily()">
-      Daily Check
+    <!-- 2. TRANSFER SITES -->
+    <button id="transferBtn" class="btn main-btn" onclick="toggleTransferSites()">
+      Transfer Sites
     </button>
 
-    <div id="dailyButtons" class="sub-group">
+    <div id="transferButtons" class="sub-group">
       <a href="telehandler.html" class="btn sub-btn">Telehandler</a>
       <a href="skips.html" class="btn sub-btn">Skips</a>
       <a href="oilstore.html" class="btn sub-btn">Oil Store</a>
     </div>
 
-    <!-- 3. Holiday -->
-    <a href="https://chekd.software/app/form/submit/dewuh69cb9590e02df165315115" class="btn main-btn">
-      Holiday Request
+    <!-- 3. DAILY CHECK -->
+    <a href="dailycheck.html" class="btn main-btn">
+      Daily Check
     </a>
 
-    <!-- 4. Problem -->
-    <a href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" class="btn main-btn">
-      Report a Problem
-    </a>
+    <!-- 4. MORE OPTIONS -->
+    <button id="optionsBtn" class="btn main-btn" onclick="toggleOptions()">
+      More Options
+    </button>
+
+    <div id="optionButtons" class="sub-group">
+      <a href="https://chekd.software/app/form/submit/dewuh69cb9590e02df165315115" class="btn sub-btn">
+        Request Holiday
+      </a>
+      <a href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" class="btn sub-btn">
+        Report a Problem
+      </a>
+    </div>
 
   </div>
 
 </div>
 
 <script>
-function toggleDaily() {
-  const section = document.getElementById("dailyButtons");
-  const btn = document.getElementById("dailyBtn");
+function toggleTransferSites() {
+  const section = document.getElementById("transferButtons");
+  const btn = document.getElementById("transferBtn");
+
+  if (section.classList.contains("show")) {
+    section.classList.remove("show");
+    btn.classList.remove("active");
+  } else {
+    section.classList.add("show");
+    btn.classList.add("active");
+  }
+}
+
+function toggleOptions() {
+  const section = document.getElementById("optionButtons");
+  const btn = document.getElementById("optionsBtn");
 
   if (section.classList.contains("show")) {
     section.classList.remove("show");
