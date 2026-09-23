@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hooklift DEMO</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #e6e6e6;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 660px;
+  width: 95%;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.header {
+  background-color: #0b4f3a;
+  color: white;
+  padding: 25px;
+}
+
+.header img {
+  height: 75px;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.news-box {
+  background-color: #fff3cd;
+  border: 2px solid #ffc107;
+  color: #333;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.content {
+  padding: 25px;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid black;
+  cursor: pointer;
+  color: white;
+}
+
+.main-btn {
+  background-color: #4a3ea8;
+}
+
+.sub-btn {
+  background-color: #a79df0;
+}
+
+.active {
+  background-color: #342f8a !important;
+}
+
+.sub-group {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  margin-top: -10px;
+  margin-bottom: 18px;
+}
+
+.sub-group.show {
+  max-height: 400px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <img src="https://www.gwynedd.llyw.cymru/SiteElements/Images/LogoCwcis.png">
+    <h1>Croeso Hooklift DEMO</h1>
+  </div>
+
+  <div class="content">
+
+    <!-- NEWS BOX -->
+    <div class="news-box">
+      ⚠️ MOT Due 17/10/2026
+    </div>
+
+    <!-- 1. DOC -->
+    <a href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105" class="btn main-btn">
+      Duty of Care
+    </a>
+
+    <!-- 2. TRANSFER SITES -->
+    <button id="transferBtn" class="btn main-btn" onclick="toggleTransferSites()">
+      Transfer Sites
+    </button>
+
+    <div id="transferButtons" class="sub-group">
+      <a href="telehandler.html" class="btn sub-btn">Telehandler</a>
+      <a href="skips.html" class="btn sub-btn">Skips</a>
+      <a href="oilstore.html" class="btn sub-btn">Oil Store</a>
+    </div>
+
+    <!-- 3. DAILY CHECK -->
+    <a href="dailycheck.html" class="btn main-btn">
+      Daily Check
+    </a>
+
+    <!-- 4. MORE OPTIONS -->
+    <button id="optionsBtn" class="btn main-btn" onclick="toggleOptions()">
+      More Options
+    </button>
+
+    <div id="optionButtons" class="sub-group">
+      <a href="https://chekd.software/app/form/submit/dewuh69cb9590e02df165315115" class="btn sub-btn">
+        Request Holiday
+      </a>
+      <a href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" class="btn sub-btn">
+        Report a Problem
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function toggleTransferSites() {
+  const section = document.getElementById("transferButtons");
+  const btn = document.getElementById("transferBtn");
+
+  if (section.classList.contains("show")) {
+    section.classList.remove("show");
+    btn.classList.remove("active");
+  } else {
+    section.classList.add("show");
+    btn.classList.add("active");
+  }
+}
+
+function toggleOptions() {
+  const section = document.getElementById("optionButtons");
+  const btn = document.getElementById("optionsBtn");
+
+  if (section.classList.contains("show")) {
+    section.classList.remove("show");
+    btn.classList.remove("active");
+  } else {
+    section.classList.add("show");
+    btn.classList.add("active");
+  }
+}
+</script>
+
+</body>
+</html>
