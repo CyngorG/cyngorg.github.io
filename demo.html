@@ -121,15 +121,9 @@ body {
     </a>
 
     <!-- 2. TRANSFER SITES -->
-    <button id="transferBtn" class="btn main-btn" onclick="toggleTransferSites()">
+    <a href="transfer-sites.html" class="btn main-btn">
       Transfer Sites
-    </button>
-
-    <div id="transferButtons" class="sub-group">
-      <a href="telehandler.html" class="btn sub-btn">Telehandler</a>
-      <a href="skips.html" class="btn sub-btn">Skips</a>
-      <a href="oilstore.html" class="btn sub-btn">Oil Store</a>
-    </div>
+    </a>
 
     <!-- 3. DAILY CHECK -->
     <a href="dailycheck.html" class="btn main-btn">
@@ -155,19 +149,6 @@ body {
 </div>
 
 <script>
-function toggleTransferSites() {
-  const section = document.getElementById("transferButtons");
-  const btn = document.getElementById("transferBtn");
-
-  if (section.classList.contains("show")) {
-    section.classList.remove("show");
-    btn.classList.remove("active");
-  } else {
-    section.classList.add("show");
-    btn.classList.add("active");
-  }
-}
-
 function toggleOptions() {
   const section = document.getElementById("optionButtons");
   const btn = document.getElementById("optionsBtn");
