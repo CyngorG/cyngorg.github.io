@@ -1,9 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hooklift AUE</title>
+<style> /* ================================ COLOUR PALETTE ================================ */ :root { --navy: #123b5d; --navy-dark: #0b2f4a; --blue: #1769aa; --green: #198754; --background: #f3f6f8; --card: #ffffff; --text: #17212b; --muted: #687684; --warning-bg: #fff8e1; --warning-border: #f4c430; --warning-text: #765500; --danger: #c62828; --shadow: 0 5px 20px rgba(18, 59, 93, 0.09); --shadow-hover: 0 8px 25px rgba(18, 59, 93, 0.16); --radius: 20px; } /* ================================ PAGE ================================ */ * { box-sizing: border-box; } html { min-height: 100%; } body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: var(--background); color: var(--text); min-height: 100vh; } /* ================================ APP CONTAINER ================================ */ .container { width: 100%; max-width: 1100px; min-height: 100vh; margin: 0 auto; background: var(--background); } /* ================================ HEADER ================================ */ .header { position: sticky; top: 0; z-index: 100; background: var(--navy); color: white; padding: 18px 30px; display: flex; align-items: center; gap: 18px; box-shadow: 0 3px 12px rgba(0,0,0,0.18); } .header img { height: 58px; width: auto; object-fit: contain; } .header-text { flex: 1; } .header h1 { margin: 0; font-size: 28px; line-height: 1.1; font-weight: 700; } .header p { margin: 5px 0 0; font-size: 15px; color: rgba(255,255,255,0.75); } /* ================================ MAIN CONTENT ================================ */ .content { padding: 30px; } /* ================================ MOT / NEWS CARD ================================ */ .news-box { background: var(--warning-bg); border: 1px solid var(--warning-border); color: var(--warning-text); padding: 17px 20px; border-radius: 16px; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; font-size: 17px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.04); } .news-icon { font-size: 24px; } .news-text { display: flex; flex-direction: column; gap: 2px; } .news-title { font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.7; } .news-date { font-size: 18px; } /* ================================ BUTTONS ================================ */ .btn { position: relative; display: flex; align-items: center; justify-content: center; gap: 14px; width: 100%; min-height: 76px; padding: 18px 24px; margin-bottom: 18px; border-radius: var(--radius); border: none; font-family: inherit; font-size: 20px; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform 0.12s ease, box-shadow 0.15s ease, background-color 0.15s ease; -webkit-tap-highlight-color: transparent; } /* Touch feedback */ .btn:active { transform: scale(0.985); } /* Keyboard accessibility */ .btn:focus-visible { outline: 4px solid rgba(23, 105, 170, 0.35); outline-offset: 3px; } /* ================================ MAIN BUTTONS ================================ */ .main-btn { background: var(--card); color: var(--text); box-shadow: var(--shadow); } .main-btn:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); } /* ================================ DUTY OF CARE ================================ */ /* First main button gets special treatment. */ .duty-btn { min-height: 170px; background: linear-gradient( 135deg, var(--navy), var(--blue) ); color: white; flex-direction: column; gap: 8px; box-shadow: 0 8px 25px rgba(18, 59, 93, 0.25); } .duty-btn:hover { box-shadow: 0 12px 32px rgba(18, 59, 93, 0.30); transform: translateY(-2px); } .duty-icon { font-size: 42px; line-height: 1; } .duty-title { font-size: 28px; letter-spacing: 0.2px; } .duty-subtitle { font-size: 15px; font-weight: 500; opacity: 0.8; } /* ================================ SECONDARY BUTTONS ================================ */ .button-icon { font-size: 30px; line-height: 1; } .secondary-btn { min-height: 95px; } .secondary-btn span:last-child { flex: 1; text-align: left; } /* ================================ SECONDARY BUTTON GRID ================================ */ .main-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; } .main-actions .btn { margin-bottom: 0; } /* ================================ MORE OPTIONS ================================ */ .options-btn { margin-top: 25px; background: transparent; color: var(--navy); border: 2px solid rgba(18,59,93,0.15); box-shadow: none; } .options-btn:hover { background: white; box-shadow: var(--shadow); } .options-btn.active { background: var(--navy); color: white; border-color: var(--navy); } /* ================================ OPTIONS AREA ================================ */ .sub-group { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.35s ease, opacity 0.25s ease; margin-top: 0; } .sub-group.show { max-height: 300px; opacity: 1; margin-top: 18px; } /* ================================ SUB BUTTONS ================================ */ .sub-btn { min-height: 70px; background: white; color: var(--text); border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 3px 12px rgba(0,0,0,0.06); } .sub-btn:hover { box-shadow: var(--shadow-hover); } /* ================================ FOOTER ================================ */ .footer { text-align: center; color: var(--muted); font-size: 13px; padding: 10px 20px 30px; } /* ================================ TABLET LANDSCAPE ================================ */ @media (min-width: 700px) { .content { padding: 35px 45px; } .duty-btn { min-height: 190px; } .duty-title { font-size: 32px; } } /* ================================ SMALL SCREENS ================================ */ @media (max-width: 600px) { .header { padding: 15px 18px; } .header img { height: 48px; } .header h1 { font-size: 22px; } .header p { font-size: 13px; } .content { padding: 20px 16px; } .main-actions { grid-template-columns: 1fr; } .duty-btn { min-height: 150px; } .duty-title { font-size: 25px; } } /* ================================ REDUCED MOTION ================================ */ @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } } </style>
+</head>
+<body>
+<div class="container">
 <!-- HEADER -->
 
 <header class="header">
 
-    <img
-       &nbsp;src="https://www.gwynedd.llyw.cymru/SiteElements/Images/LogoCwcis.png"
+ &nbsp; &nbsp;<img
+ &nbsp; &nbsp; &nbsp; &nbsp;src="https://www.gwynedd.llyw.cymru/SiteElements/Images/LogoCwcis.png"
  &nbsp; &nbsp; &nbsp; &nbsp;alt="Company logo"
  &nbsp; &nbsp;>
 
@@ -23,9 +31,9 @@
 <main class="content">
 
 
- &nbsp; &nbsp;<!-- MOT -->
+    <!-- MOT -->
 
- &nbsp; &nbsp;<div class="news-box">
+    <div class="news-box">
 
         <div class="news-icon">
             ⚠️
@@ -35,9 +43,9 @@
 
             <div class="news-title">
                 MOT
-            </div>
+           &nbsp;</div>
 
-            <div class="news-date">
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<div class="news-date">
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Due 17 October 2026
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
 
@@ -50,10 +58,10 @@
 
  &nbsp; &nbsp;<a
  &nbsp; &nbsp; &nbsp; &nbsp;href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105"
- &nbsp; &nbsp; &nbsp; &nbsp;class="btn duty-btn"
- &nbsp; &nbsp;>
+ &nbsp; &nbsp; &nbsp;  class="btn duty-btn"
+    >
 
- &nbsp; &nbsp; &nbsp;  <span class="duty-icon">📄</span>
+        <span class="duty-icon">📄</span>
 
         <span class="duty-title">
             Duty of Care
@@ -127,8 +135,8 @@
     <!-- HIDDEN OPTIONS -->
 
     <div
-        id="optionButtons"
-       &nbsp;class="sub-group"
+   &nbsp; &nbsp; &nbsp;id="optionButtons"
+ &nbsp; &nbsp; &nbsp; &nbsp;class="sub-group"
  &nbsp; &nbsp;>
 
 
@@ -152,8 +160,8 @@
 
  &nbsp; &nbsp; &nbsp; &nbsp;<a
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337"
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class="btn sub-btn"
- &nbsp; &nbsp; &nbsp; &nbsp;>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  class="btn sub-btn"
+        >
 
             <span class="button-icon">⚠️</span>
 
@@ -173,13 +181,9 @@
 <div class="footer">
     Hooklift Vehicle Portal
 </div>
-
-
-
-</main>
-
-
-<div class="footer">
-    Hooklift Vehicle Portal
 </div>
+<script> function toggleOptions() { const section = document.getElementById("optionButtons"); const btn = document.getElementById("optionsBtn"); const icon = document.getElementById("optionsIcon"); const text = document.getElementById("optionsText"); const isOpen = section.classList.contains("show"); if (isOpen) { section.classList.remove("show"); btn.classList.remove("active"); btn.setAttribute("aria-expanded", "false"); icon.textContent = "☰"; text.textContent = "More Options"; } else { section.classList.add("show"); btn.classList.add("active"); btn.setAttribute("aria-expanded", "true"); icon.textContent = "×"; text.textContent = "Close Options"; } } </script>
+</body>
+</html>
+
 
