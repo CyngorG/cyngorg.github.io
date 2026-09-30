@@ -5,382 +5,187 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hooklift DEMO</title>
   <style>
-    /* ================================ COLOUR PALETTE ================================ */
     :root {
-      --dark-green: #1a4d2e;
-      --dark-green-light: #2d6a4f;
-      --dark-green-lighter: #40916c;
-      --background: #f3f6f9;
-      --text-dark: #1a1a1a;
-      --text-light: #ffffff;
-      --border: #ddd;
-      --shadow: rgba(0, 0, 0, 0.1);
+      --green: #185d36;
+      --green-dark: #124a2a;
+      --green-light: #5f9f7a;
+      --green-mid: #2f6a4d;
+      --green-strong: #1b3f2f;
+      --bg: #e6e6e6;
+      --white: #ffffff;
+      --yellow-bg: #fff3cd;
+      --yellow-border: #ffc107;
+      --text: #333;
     }
 
-    /* ================================ GENERAL ================================ */
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: var(--background);
-      padding: 20px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      padding: 10px;
     }
 
     .container {
-      max-width: 500px;
-      margin: 0 auto;
-      background: var(--text-light);
-      border-radius: 16px;
+      max-width: 660px;
+      width: 100%;
+      background: var(--white);
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 4px 12px var(--shadow);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
-    /* ================================ HEADER ================================ */
     .header {
-      background: linear-gradient(135deg, var(--dark-green) 0%, var(--dark-green-light) 100%);
-      color: var(--text-light);
-      padding: 30px 20px;
+      background-color: var(--green);
+      color: white;
+      padding: 25px;
       text-align: center;
     }
 
     .header img {
-      height: 70px;
+      height: 75px;
       margin-bottom: 15px;
       display: block;
       margin-left: auto;
       margin-right: auto;
     }
 
-    .header-text h1 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 5px;
-      letter-spacing: 0.5px;
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.2;
     }
 
-    .header-text p {
-      font-size: 14px;
-      opacity: 0.95;
-      font-weight: 500;
-    }
-
-    /* ================================ CONTENT ================================ */
     .content {
       padding: 25px;
     }
 
-    /* ================================ NEWS BOX ================================ */
     .news-box {
-      background: linear-gradient(135deg, #fff8e1 0%, #fffbf0 100%);
-      border-left: 5px solid #ffc107;
-      border-radius: 10px;
-      padding: 16px;
-      margin-bottom: 25px;
-      display: flex;
-      gap: 12px;
-    }
-
-    .news-icon {
-      font-size: 24px;
-      flex-shrink: 0;
-    }
-
-    .news-text {
-      flex: 1;
-    }
-
-    .news-title {
-      font-weight: 700;
-      color: var(--text-dark);
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .news-date {
-      font-size: 14px;
-      color: #8b7500;
-      margin-top: 4px;
-      font-weight: 500;
-    }
-
-    /* ================================ BUTTONS ================================ */
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      width: 100%;
-      padding: 16px;
-      border: none;
+      background-color: var(--yellow-bg);
+      border: 2px solid var(--yellow-border);
+      color: var(--text);
+      padding: 15px;
       border-radius: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .btn {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 18px;
+      border-radius: 18px;
+      margin-bottom: 18px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
       text-decoration: none;
-      color: var(--text-light);
-      transition: all 0.3s ease;
-      flex-wrap: wrap;
+      border: 2px solid black;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.3s ease;
     }
 
-    /* Duty of Care Button */
-    .duty-btn {
-      background: linear-gradient(135deg, var(--dark-green) 0%, var(--dark-green-light) 100%);
-      margin-bottom: 20px;
-      flex-direction: column;
-      padding: 20px;
+    .main-btn {
+      background-color: var(--green-mid);
     }
 
-    .duty-btn:hover {
-      background: linear-gradient(135deg, var(--dark-green-light) 0%, var(--dark-green-lighter) 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(26, 77, 46, 0.3);
+    .main-btn:hover {
+      background-color: var(--green-strong);
     }
 
-    .duty-icon {
-      font-size: 28px;
-    }
-
-    .duty-title {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .duty-subtitle {
-      font-size: 12px;
-      opacity: 0.9;
-    }
-
-    /* Main Secondary Buttons */
-    .main-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .secondary-btn {
-      background: var(--dark-green-lighter);
-      flex-direction: column;
-      padding: 16px 12px;
-      font-size: 14px;
-    }
-
-    .secondary-btn:hover {
-      background: var(--dark-green-light);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(26, 77, 46, 0.2);
-    }
-
-    .button-icon {
-      font-size: 24px;
-    }
-
-    /* Options Button */
-    .options-btn {
-      background: var(--dark-green-light);
-      margin-bottom: 10px;
-      flex-direction: row;
-    }
-
-    .options-btn:hover {
-      background: var(--dark-green-lighter);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(26, 77, 46, 0.2);
-    }
-
-    .options-btn.active {
-      background: var(--dark-green);
-    }
-
-    /* Sub Buttons (Hidden Options) */
     .sub-btn {
-      background: linear-gradient(135deg, var(--dark-green-lighter) 0%, #52b788 100%);
-      flex-direction: column;
-      padding: 14px 12px;
-      font-size: 14px;
-      margin-bottom: 10px;
+      background-color: var(--green-light);
     }
 
     .sub-btn:hover {
-      background: linear-gradient(135deg, #40916c 0%, var(--dark-green-light) 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(26, 77, 46, 0.2);
+      background-color: var(--green-mid);
     }
 
-    /* ================================ SUB GROUP (HIDDEN OPTIONS) ================================ */
+    .active {
+      background-color: var(--green-strong) !important;
+    }
+
     .sub-group {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease;
+      transition: max-height 0.35s ease;
+      margin-top: -10px;
+      margin-bottom: 18px;
     }
 
     .sub-group.show {
-      max-height: 500px;
-    }
-
-    /* ================================ FOOTER ================================ */
-    .footer {
-      background: var(--dark-green);
-      color: var(--text-light);
-      text-align: center;
-      padding: 16px;
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    /* ================================ MEDIA QUERIES ================================ */
-    @media (max-width: 480px) {
-      .container {
-        border-radius: 12px;
-      }
-
-      .header {
-        padding: 20px 15px;
-      }
-
-      .header img {
-        height: 60px;
-      }
-
-      .header-text h1 {
-        font-size: 20px;
-      }
-
-      .content {
-        padding: 20px;
-      }
-
-      .main-actions {
-        grid-template-columns: 1fr;
-      }
-
-      .secondary-btn {
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 14px 16px;
-      }
+      max-height: 400px;
     }
   </style>
 </head>
-
 <body>
+
   <div class="container">
-    <!-- HEADER -->
-    <header class="header">
-      <img
-        src="https://www.gwynedd.llyw.cymru/SiteElements/Images/LogoCwcis.png"
-        alt="Company logo"
-      >
-      <div class="header-text">
-        <h1>HOOKLIFT DEMO</h1>
-        <p>Vehicle Portal DL24 AUE</p>
-      </div>
-    </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="content">
-      <!-- MOT NEWS -->
+    <div class="header">
+      <img src="https://www.gwynedd.llyw.cymru/SiteElements/Images/LogoCwcis.png" alt="Gwynedd Council Logo">
+      <h1>Croeso Hooklift DEMO</h1>
+    </div>
+
+    <div class="content">
+
       <div class="news-box">
-        <div class="news-icon">⚠️</div>
-        <div class="news-text">
-          <div class="news-title">NEWS</div>
-          <div class="news-date">Due 17 October 2026</div>
-        </div>
+        ⚠️ MOT Due 17/10/2026
       </div>
 
-      <!-- DUTY OF CARE -->
-      <a
-        href="https://chekd.software/app/form/submit/arwqx6a0467a084623617486610"
-        class="btn duty-btn"
-      >
-        <span class="duty-icon">📄</span>
-        <span class="duty-title">Duty of Care</span>
-        <span class="duty-subtitle">Tap to open</span>
+      <a href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105" class="btn main-btn">
+        Duty of Care HWRC
       </a>
 
-      <!-- MAIN SECONDARY ACTIONS -->
-      <div class="main-actions">
-        <!-- TRANSFER SITES -->
-        <a
-          href="https://chekd.software/app/form/submit/erwam6ab51f678b6ef749911298"
-          class="btn main-btn secondary-btn"
-        >
-          <span class="button-icon">🗺️</span>
-          <span>HWRC Transfer Sites</span>
-        </a>
+      <a href="https://chekd.software/app/form/submit/erwam6ab51f678b6ef749911298" class="btn main-btn">
+        HWRC Transfer Sites
+      </a>
 
-        <!-- DAILY CHECK -->
-        <a
-          href="https://chekd.software/app/inspect/qr/ifqbk690261c126fda387054901"
-          class="btn main-btn secondary-btn"
-        >
-          <span class="button-icon">✓</span>
-          <span>Daily Check</span>
-        </a>
-      </div>
+      <a href="https://chekd.software/app/inspect/qr/ifqbk690261c126fda387054901" class="btn main-btn">
+        Daily Check
+      </a>
 
-      <!-- MORE OPTIONS -->
-      <button
-        id="optionsBtn"
-        class="btn options-btn"
-        onclick="toggleOptions()"
-        aria-expanded="false"
-      >
-        <span id="optionsIcon">☰</span>
-        <span id="optionsText">More Options</span>
+      <button id="optionsBtn" class="btn main-btn" onclick="toggleOptions()">
+        More Options
       </button>
 
-      <!-- HIDDEN OPTIONS -->
       <div id="optionButtons" class="sub-group">
-        <!-- HOLIDAY -->
-        <a
-          href="https://chekd.software/app/form/submit/dewuh69cb9590e02df165315115"
-          class="btn sub-btn"
-        >
-          <span class="button-icon">🏖️</span>
-          <span>Request Holiday</span>
+        <a href="https://chekd.software/app/form/submit/dewuh69cb9590e02df165315115" class="btn sub-btn">
+          Request Holiday
         </a>
-
-        <!-- PROBLEM -->
-        <a
-          href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337"
-          class="btn sub-btn"
-        >
-          <span class="button-icon">⚠️</span>
-          <span>Report a Problem</span>
+        <a href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" class="btn sub-btn">
+          Report a Problem
         </a>
       </div>
-    </main>
 
-    <!-- FOOTER -->
-    <div class="footer">
-      Hooklift Vehicle Portal
     </div>
+
   </div>
 
   <script>
     function toggleOptions() {
       const section = document.getElementById("optionButtons");
       const btn = document.getElementById("optionsBtn");
-      const icon = document.getElementById("optionsIcon");
 
       if (section.classList.contains("show")) {
         section.classList.remove("show");
         btn.classList.remove("active");
-        icon.textContent = "☰";
-        btn.setAttribute("aria-expanded", "false");
       } else {
         section.classList.add("show");
         btn.classList.add("active");
-        icon.textContent = "✕";
-        btn.setAttribute("aria-expanded", "true");
       }
     }
   </script>
+
 </body>
 </html>
