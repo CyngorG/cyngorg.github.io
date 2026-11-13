@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#123640">
-  <title>Blaenau Ffestiniog HWRC | CHEKD Staff Portal v0.1.2</title>
+  <title>Blaenau Ffestiniog HWRC | CHEKD Staff Portal v0.1.3</title>
   <style>
     :root {
       --navy: #123640;
@@ -30,9 +30,9 @@
     .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .tile, .wide, .equipment, .subitem, .skips { background: #fff; border: 1px solid var(--border); border-radius: 12px; }
     .tile, .wide, .subitem { display: flex; align-items: center; gap: 12px; padding: 19px; }
-    .tile { min-height: 142px; flex-direction: column; align-items: flex-start; justify-content: center; }
+    .tile { height: 142px; min-height: 142px; flex-direction: column; align-items: flex-start; justify-content: center; }
     .tile .emoji { font-size: 29px; }
-    .tile strong, .wide strong, .subitem strong { font-size: 17px; }
+    .tile .title, .wide strong, .subitem strong { font-size: 17px; font-weight: 760; }
     .emoji { font-size: 24px; flex: 0 0 auto; }
     .linkcopy { display: flex; flex-direction: column; gap: 3px; }
     .desc { color: var(--muted); font-size: 13px; font-weight: 400; }
@@ -65,8 +65,8 @@
     a:focus-visible, button:focus-visible { outline: 3px solid #e4af34; outline-offset: 3px; }
     @media (max-width: 520px) {
       main { padding: 17px 13px 38px; }
-      .tile { min-height: 122px; padding: 14px; }
-      .tile strong { font-size: 15px; }
+      .tile { height: 122px; min-height: 122px; padding: 14px; }
+      .tile .title { font-size: 15px; }
       .tile .emoji { font-size: 24px; }
       .skip-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
       .skip-link { min-height: 58px; }
@@ -79,21 +79,21 @@
   <small>GWYNEDD • HWRC STAFF PORTAL</small>
   <h1>Blaenau Ffestiniog Recycling Centre</h1>
   <p>Staff checks, reporting and site information</p>
-  <span class="pill">Prototype v0.1.2</span>
+  <span class="pill">Prototype v0.1.3</span>
 </header>
 <main>
   <div class="notice"><strong>Pilot for review.</strong> These links open existing CHEKD forms. Select <strong>Blaenau Ffestiniog RC</strong> as the location in shared forms. Do not submit dummy test records.</div>
 
   <h2>Daily operations</h2>
   <div class="twocol">
-    <a class="tile" href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105" target="_blank" rel="noopener noreferrer"><span class="emoji" aria-hidden="true">🌅</span><span class="linkcopy"><strong>Start of Day</strong><span class="desc">Opening checks — select Blaenau in CHEKD</span></span><span class="arrow" aria-hidden="true">↗</span></a>
-    <a class="tile" href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" target="_blank" rel="noopener noreferrer"><span class="emoji" aria-hidden="true">🌇</span><span class="linkcopy"><strong>End of Day</strong><span class="desc">Closing checks — select Blaenau in CHEKD</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+    <a class="tile" href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105" target="_blank" rel="noopener noreferrer"><span class="emoji" aria-hidden="true">🌅</span><span class="title">Start of Day</span><span class="desc">Opening checks ↗</span></a>
+    <a class="tile" href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" target="_blank" rel="noopener noreferrer"><span class="emoji" aria-hidden="true">🌇</span><span class="title">End of Day</span><span class="desc">Closing checks ↗</span></a>
   </div>
 
   <section class="equipment" aria-label="Daily equipment checks">
     <button class="eqbutton" id="equipmentToggle" type="button" aria-expanded="false" aria-controls="equipmentChoices">
       <span class="emoji" aria-hidden="true">🛠️</span>
-      <span><strong>Daily Equipment Checks</strong><span class="desc">Telehandler • Skips • Steps • Stores</span></span>
+      <span><strong>Daily Equipment Checks</strong><span class="desc">Telehandler • Skips • Steps • Stores • Barrier</span></span>
       <span class="chevron" id="chevron" aria-hidden="true">▾</span>
     </button>
     <div class="eqbody" id="equipmentChoices" hidden>
@@ -101,7 +101,8 @@
       <a class="subitem" href="https://chekd.software/app/inspect/qr/zkcgs6981c38371788982794059" target="_blank" rel="noopener noreferrer"><span class="emoji" aria-hidden="true">🪜</span><span class="linkcopy"><strong>Steps</strong><span class="desc">Site steps inspection</span></span><span class="arrow" aria-hidden="true">↗</span></a>
       <a class="subitem" href="https://chekd.software/app/inspect/qr/tzmsk6989e0bea9b8c528968472" target="_blank" rel="noopener noreferrer"><span class="emoji" aria-hidden="true">🛢️</span><span class="linkcopy"><strong>Oil Store</strong><span class="desc">Oil storage inspection</span></span><span class="arrow" aria-hidden="true">↗</span></a>
       <a class="subitem" href="https://chekd.software/app/inspect/qr/qcfxt6989e08715549309739999" target="_blank" rel="noopener noreferrer"><span class="emoji" aria-hidden="true">🧪</span><span class="linkcopy"><strong>Chemical Store</strong><span class="desc">Chemical storage inspection</span></span><span class="arrow" aria-hidden="true">↗</span></a>
-      <section class="skips" aria-labelledby="skip-title">
+        <a class="subitem" href="https://chekd.software/app/inspect/qr/bvqft6989dd90e293f350458877" target="_blank" rel="noopener noreferrer"><span class="emoji" aria-hidden="true">🚧</span><span class="linkcopy"><strong>Barrier</strong><span class="desc">Barrier inspection</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+    <section class="skips" aria-labelledby="skip-title">
         <div class="skip-heading"><span class="emoji" aria-hidden="true">🚛</span><div><strong id="skip-title">Tipping Skips</strong><span class="desc">Tap the number shown on the skip</span></div></div>
         <div class="skip-grid">
           <a class="skip-link" href="https://chekd.software/app/inspect/qr/ymrso6981c28b5aad0271044871" target="_blank" rel="noopener noreferrer" aria-label="Open CHEKD inspection for tipping skip 23">23<span aria-hidden="true">↗</span></a>
@@ -130,18 +131,7 @@
     <a class="wide" href="https://chekd.software/app/form/submit/wkroh68e8ce1ba8f26208341490" target="_blank" rel="noopener noreferrer"><span class="emoji" aria-hidden="true">📣</span><span class="linkcopy"><strong>Report an Issue</strong></span><span class="arrow" aria-hidden="true">↗</span></a>
   </div>
 
-  <h2>Other registered equipment</h2>
-  <section class="equipment" aria-label="Other equipment">
-    <button class="eqbutton" id="otherToggle" type="button" aria-expanded="false" aria-controls="otherChoices">
-      <span class="emoji" aria-hidden="true">📋</span>
-      <span><strong>Occasional / confirm frequency</strong><span class="desc">Not part of routine daily shortcuts</span></span>
-      <span class="chevron" id="otherChevron" aria-hidden="true">▾</span>
-    </button>
-    <div class="eqbody" id="otherChoices" hidden>
-      <a class="subitem" href="https://chekd.software/app/inspect/qr/bvqft6989dd90e293f350458877" target="_blank" rel="noopener noreferrer"><span class="emoji" aria-hidden="true">🚧</span><span class="linkcopy"><strong>Barrier</strong><span class="desc">Last recorded inspection: 9 March 2026</span></span><span class="arrow" aria-hidden="true">↗</span></a>
-      <p class="fineprint">Teleskip 1 was also listed in CHEKD, but its inspection link and frequency have not been confirmed. Its absence here does not change inspection requirements.</p>
-    </div>
-  </section>
+  <p class="fineprint">Teleskip 1 is registered in CHEKD, but its inspection link and inspection frequency still need confirmation with the site supervisor.</p>
 
   <h2>Site announcements</h2>
   <div class="stack">
@@ -149,7 +139,7 @@
     <div class="news"><span class="tag" style="color:#36677b">GENERAL · EXAMPLE</span><strong>Staff announcements</strong><p>General reminders and seasonal notices will appear here. Example content only.</p></div>
   </div>
 
-  <div class="footer">Blaenau Ffestiniog HWRC • Prototype v0.1.2 • Reuses Bangor layout and shared CHEKD forms. Site-specific equipment links. Annual leave not included. This portal does not track completed inspections.</div>
+  <div class="footer">Blaenau Ffestiniog HWRC • Prototype v0.1.3 • Reuses Bangor layout and shared CHEKD forms. Site-specific equipment links. Annual leave not included. This portal does not track completed inspections.</div>
 </main>
 <script>
   // Accessible, independent expandable sections. No inspection data is stored here.
@@ -165,7 +155,6 @@
     });
   }
   setupDisclosure('equipmentToggle', 'equipmentChoices', 'chevron');
-  setupDisclosure('otherToggle', 'otherChoices', 'otherChevron');
 </script>
 </body>
 </html>
