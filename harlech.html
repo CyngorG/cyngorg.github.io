@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Harlech HWRC | CHEKD Staff Portal v0.1.4</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Harlech HWRC | CHEKD Staff Portal v0.1.5</title>
 <style>
 :root{--navy:#123640;--teal:#0b756c;--bg:#f3f6f6;--ink:#163039;--muted:#61747b;--border:#dce6e5}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);font:16px/1.45 system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:var(--ink)}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
@@ -17,51 +18,51 @@ main{max-width:1020px;margin:auto;padding:22px 20px 55px}.notice{background:#eaf
 </style>
 </head>
 <body>
-<header><small>GWYNEDD • HWRC STAFF PORTAL</small><h1>Harlech Recycling Centre</h1><p>Staff checks, reporting and site information</p><span class="pill">Prototype v0.1.4</span></header>
+<header><small>GWYNEDD • HWRC STAFF PORTAL</small><h1>Harlech Recycling Centre</h1><p>Staff checks, reporting and site information</p><span class="pill">Prototype v0.1.5</span></header>
 <main>
 <div class="notice"><strong>Prototype for review.</strong> CHEKD forms are live. Select <strong>Ffridd Rasus RC</strong> when a shared form asks for location. Verify each inspection opens the intended asset before operational use; do not submit test entries.</div>
 <h2>Daily operations</h2>
 <div class="twocol">
-<a class="tile" href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105" target="_blank" rel="noopener noreferrer"><span class="icon" aria-hidden="true">🌅</span><span class="title">Start of Day</span><span class="desc">Opening checks ↗</span></a>
-<a class="tile" href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" target="_blank" rel="noopener noreferrer"><span class="icon" aria-hidden="true">🌇</span><span class="title">End of Day</span><span class="desc">Closing checks ↗</span></a>
+<a class="tile" href="https://chekd.software/app/form/submit/skhwe691389ed3de71568919105" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" class="icon">🌅</span><span class="title">Start of Day</span><span class="desc">Opening checks ↗</span></a>
+<a class="tile" href="https://chekd.software/app/form/submit/coeqg691389f770d03269006337" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" class="icon">🌇</span><span class="title">End of Day</span><span class="desc">Closing checks ↗</span></a>
 </div>
 <div class="equipment">
-<button class="eqbutton" id="equipmentToggle" aria-expanded="false" aria-controls="equipmentChoices"><span style="font-size:28px" aria-hidden="true">🛠️</span><span><span class="title">Daily Equipment Checks</span><br><span class="desc">Telehandler · Compactor · Skips · Steps · Stores</span></span><span class="right" id="chevron" aria-hidden="true">▾</span></button>
-<div class="eqbody" id="equipmentChoices" hidden>
-<a class="subitem" href="https://chekd.software/app/inspect/qr/dgnbm690261c11846f895824732" target="_blank" rel="noopener noreferrer" aria-label="Open CHEKD inspection for Telehandler, FARESIN"><span>🚜</span><strong>Telehandler</strong><span class="right">↗</span></a>
-<a class="subitem" href="https://chekd.software/app/inspect/qr/rdgno699da1b4295de799280414" target="_blank" rel="noopener noreferrer" aria-label="Open CHEKD inspection for Compactor Harlech"><span>⚙️</span><strong>Compactor</strong><span class="right">↗</span></a>
-<a class="subitem" href="https://chekd.software/app/inspect/qr/ewyhf690261c0d08ca402523340" target="_blank" rel="noopener noreferrer"><span>🛢️</span><strong>Oil Store</strong><span class="right">↗</span></a>
-<a class="subitem" href="https://chekd.software/app/inspect/qr/nqgsu690261c0c1d84313364827" target="_blank" rel="noopener noreferrer"><span>🧪</span><strong>Chemical Store</strong><span class="right">↗</span></a>
-<a class="subitem" href="https://chekd.software/app/inspect/qr/vyzem690261c095447228391760" target="_blank" rel="noopener noreferrer"><span>🪜</span><strong>Steps 01</strong><span class="right">↗</span></a>
-<a class="subitem" href="https://chekd.software/app/inspect/qr/zvmos690261c0a4724838824251" target="_blank" rel="noopener noreferrer"><span>🪜</span><strong>Steps 02</strong><span class="right">↗</span></a>
-<a class="subitem" href="https://chekd.software/app/inspect/qr/wjpuk690261c0b3384464428850" target="_blank" rel="noopener noreferrer"><span>🪜</span><strong>Steps 03</strong><span class="right">↗</span></a>
-<section class="skips" aria-labelledby="skip-title">
+<button aria-controls="equipmentChoices" aria-expanded="false" class="eqbutton" id="equipmentToggle"><span aria-hidden="true" style="font-size:28px">🛠️</span><span><span class="title">Daily Equipment Checks</span><br/><span class="desc">Telehandler · Compactor · Skips · Steps · Stores</span></span><span aria-hidden="true" class="right" id="chevron">▾</span></button>
+<div class="eqbody" hidden="" id="equipmentChoices">
+<a aria-label="Open CHEKD inspection for Telehandler, FARESIN" class="subitem" href="https://chekd.software/app/inspect/qr/dgnbm690261c11846f895824732" rel="noopener noreferrer" target="_blank"><span>🚜</span><strong>Telehandler</strong><span class="right">↗</span></a>
+<a aria-label="Open CHEKD inspection for Compactor Harlech" class="subitem" href="https://chekd.software/app/inspect/qr/rdgno699da1b4295de799280414" rel="noopener noreferrer" target="_blank"><span>⚙️</span><strong>Compactor</strong><span class="right">↗</span></a>
+<a class="subitem" href="https://chekd.software/app/inspect/qr/ewyhf690261c0d08ca402523340" rel="noopener noreferrer" target="_blank"><span>🛢️</span><strong>Oil Store</strong><span class="right">↗</span></a>
+<a class="subitem" href="https://chekd.software/app/inspect/qr/nqgsu690261c0c1d84313364827" rel="noopener noreferrer" target="_blank"><span>🧪</span><strong>Chemical Store</strong><span class="right">↗</span></a>
+<a class="subitem" href="https://chekd.software/app/inspect/qr/vyzem690261c095447228391760" rel="noopener noreferrer" target="_blank"><span>🪜</span><strong>Steps 01</strong><span class="right">↗</span></a>
+<a class="subitem" href="https://chekd.software/app/inspect/qr/zvmos690261c0a4724838824251" rel="noopener noreferrer" target="_blank"><span>🪜</span><strong>Steps 02</strong><span class="right">↗</span></a>
+<a class="subitem" href="https://chekd.software/app/inspect/qr/wjpuk690261c0b3384464428850" rel="noopener noreferrer" target="_blank"><span>🪜</span><strong>Steps 03</strong><span class="right">↗</span></a>
+<section aria-labelledby="skip-title" class="skips">
 <div class="skip-heading"><span aria-hidden="true">🚛</span><div><strong id="skip-title">Tipping Skips</strong><div class="desc">Select the number displayed on the skip</div></div></div>
 <div class="skip-grid">
 <!-- TS9 and TS12 have physically moved from Dolgellau; update their CHEKD registered location separately. -->
-<a class="skip-link" href="https://chekd.software/app/inspect/qr/xcmqk6983446dded69346424346" target="_blank" rel="noopener noreferrer" aria-label="Open CHEKD inspection for TS9" title="TS9"><strong>9</strong><span>↗</span></a>
-<a class="skip-link" href="https://chekd.software/app/inspect/qr/nbyzo6983440677ce6625430226" target="_blank" rel="noopener noreferrer" aria-label="Open CHEKD inspection for TS12" title="TS12"><strong>12</strong><span>↗</span></a>
-<a class="skip-link" href="https://chekd.software/app/inspect/qr/alkim6a06dc060fb17447827807" target="_blank" rel="noopener noreferrer" aria-label="Open CHEKD inspection for TS63" title="TS63"><strong>63</strong><span>↗</span></a>
-<a class="skip-link" href="https://chekd.software/app/inspect/qr/meydx690261c077797499192647" target="_blank" rel="noopener noreferrer" aria-label="Open CHEKD inspection for TS78" title="TS78"><strong>78</strong><span>↗</span></a>
-<a class="skip-link" href="https://chekd.software/app/inspect/qr/nxefv690261c08667f175048324" target="_blank" rel="noopener noreferrer" aria-label="Open CHEKD inspection for TS79" title="TS79"><strong>79</strong><span>↗</span></a>
-<a class="skip-link" href="https://chekd.software/app/inspect/qr/rlcek690261c068938811189724" target="_blank" rel="noopener noreferrer" aria-label="Open CHEKD inspection for TS80" title="TS80"><strong>80</strong><span>↗</span></a>
-<a class="skip-link" href="https://chekd.software/app/inspect/qr/uhtoc690261c049990662517211" target="_blank" rel="noopener noreferrer" aria-label="Open CHEKD inspection for TS81" title="TS81"><strong>81</strong><span>↗</span></a>
+<a aria-label="Open CHEKD inspection for TS9" class="skip-link" href="https://chekd.software/app/inspect/qr/xcmqk6983446dded69346424346" rel="noopener noreferrer" target="_blank" title="TS9"><strong>9</strong><span>↗</span></a>
+<a aria-label="Open CHEKD inspection for TS12" class="skip-link" href="https://chekd.software/app/inspect/qr/nbyzo6983440677ce6625430226" rel="noopener noreferrer" target="_blank" title="TS12"><strong>12</strong><span>↗</span></a>
+<a aria-label="Open CHEKD inspection for TS63" class="skip-link" href="https://chekd.software/app/inspect/qr/alkim6a06dc060fb17447827807" rel="noopener noreferrer" target="_blank" title="TS63"><strong>63</strong><span>↗</span></a>
+<a aria-label="Open CHEKD inspection for TS78" class="skip-link" href="https://chekd.software/app/inspect/qr/meydx690261c077797499192647" rel="noopener noreferrer" target="_blank" title="TS78"><strong>78</strong><span>↗</span></a>
+<a aria-label="Open CHEKD inspection for TS79" class="skip-link" href="https://chekd.software/app/inspect/qr/nxefv690261c08667f175048324" rel="noopener noreferrer" target="_blank" title="TS79"><strong>79</strong><span>↗</span></a>
+<a aria-label="Open CHEKD inspection for TS80" class="skip-link" href="https://chekd.software/app/inspect/qr/rlcek690261c068938811189724" rel="noopener noreferrer" target="_blank" title="TS80"><strong>80</strong><span>↗</span></a>
+<a aria-label="Open CHEKD inspection for TS81" class="skip-link" href="https://chekd.software/app/inspect/qr/uhtoc690261c049990662517211" rel="noopener noreferrer" target="_blank" title="TS81"><strong>81</strong><span>↗</span></a>
 <!-- TEMPORARY: TS87 displays TS87 but opens CHEKD TS76 pending supervisor verification. DO NOT treat inspection as TS87 until corrected in CHEKD. -->
-<a class="skip-link" href="https://chekd.software/app/inspect/qr/tzbky690261c03a704606211581" target="_blank" rel="noopener noreferrer" aria-label="TS87 provisional: opens CHEKD TS76. Verify before inspection" title="TS87 — provisional CHEKD TS76 link"><strong>87</strong><span>↗</span></a>
+<a aria-label="Open CHEKD inspection for skip 87, asset TS87 Harlech" class="skip-link" href="https://chekd.software/app/inspect/qr/xqesh6b0845aba8233005600824" rel="noopener noreferrer" target="_blank" title="TS87 — own CHEKD inspection link"><strong>87</strong><span>↗</span></a>
 </div>
 <p class="skip-note"><strong>Asset verification:</strong> TS87 currently opens the CHEKD record for <strong>TS76</strong> until the supervisor confirms the correct asset. Do not submit an inspection against the wrong record. TS9 and TS12 have moved from Dolgellau; their CHEKD site records may still need updating.</p>
 </section>
 </div></div>
-<div style="margin-top:12px"><a class="wide" href="https://chekd.software/app/form/submit/bqtkg691389e242b6a753541611" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" style="font-size:25px">🧲</span><span class="title">Magnetic Sweep</span><span class="right">↗</span></a></div>
+<div style="margin-top:12px"><a class="wide" href="https://chekd.software/app/form/submit/bqtkg691389e242b6a753541611" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" style="font-size:25px">🧲</span><span class="title">Magnetic Sweep</span><span class="right">↗</span></a></div>
 <h2>Reporting &amp; waste acceptance</h2>
 <div class="stack">
-<a class="wide" href="https://chekd.software/app/form/submit/egupl6913899c77656298351289" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" style="font-size:25px">⚠️</span><span class="title">Site Defect Sheet</span><span class="right">↗</span></a>
-<a class="wide" href="https://chekd.software/app/form/submit/ptcnh691389ca70397486271967" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" style="font-size:25px">🧪</span><span><span class="title">Chemicals &amp; Asbestos</span><br><span class="desc">Select Ffridd Rasus RC in CHEKD where prompted</span></span><span class="right">↗</span></a>
-<a class="wide" href="https://chekd.software/app/form/submit/wkroh68e8ce1ba8f26208341490" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" style="font-size:25px">📣</span><span class="title">Report an Issue</span><span class="right">↗</span></a>
+<a class="wide" href="https://chekd.software/app/form/submit/egupl6913899c77656298351289" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" style="font-size:25px">⚠️</span><span class="title">Site Defect Sheet</span><span class="right">↗</span></a>
+<a class="wide" href="https://chekd.software/app/form/submit/ptcnh691389ca70397486271967" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" style="font-size:25px">🧪</span><span><span class="title">Chemicals &amp; Asbestos</span><br/><span class="desc">Select Ffridd Rasus RC in CHEKD where prompted</span></span><span class="right">↗</span></a>
+<a class="wide" href="https://chekd.software/app/form/submit/wkroh68e8ce1ba8f26208341490" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" style="font-size:25px">📣</span><span class="title">Report an Issue</span><span class="right">↗</span></a>
 </div>
 <h2>Site announcements</h2>
 <div class="stack"><div class="news important"><span class="tag">IMPORTANT · EXAMPLE</span><strong>Site procedure update</strong><p>Operational updates for Harlech staff will appear here. This is example content.</p></div><div class="news"><span class="tag" style="color:#36677b">GENERAL · EXAMPLE</span><strong>Staff announcements</strong><p>General reminders and seasonal notices will appear here. This is example content.</p></div></div>
-<div class="footer">Harlech HWRC (Ffridd Rasus RC) • Prototype v0.1.4 • Bangor master layout with Harlech-specific equipment. Annual leave excluded. Not an official live operational portal.</div>
+<div class="footer">Harlech HWRC (Ffridd Rasus RC) • Prototype v0.1.5 • TS87 now uses its own CHEKD inspection link • Equipment condition and inspection status remain in CHEKD.</div>
 </main>
 <script>
 const toggle=document.getElementById('equipmentToggle');const panel=document.getElementById('equipmentChoices');const arrow=document.getElementById('chevron');toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));panel.hidden=!open;arrow.textContent=open?'▴':'▾';});
